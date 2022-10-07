@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeesController">
+   <children>
+      <AnchorPane prefHeight="677.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="12.0" prefHeight="66.0" prefWidth="380.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Employee" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <TextField fx:id="name" layoutX="5.0" layoutY="116.0" prefHeight="60.0" prefWidth="376.0" promptText="Entre Name" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="110.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="street" layoutX="1.0" layoutY="254.0" prefHeight="60.0" prefWidth="376.0" promptText="Entre Street" AnchorPane.topAnchor="190.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="city" layoutY="370.0" prefHeight="60.0" prefWidth="165.0" promptText="City" AnchorPane.topAnchor="280.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="salary" layoutX="205.0" layoutY="373.0" prefHeight="60.0" prefWidth="171.0" promptText="Salary" AnchorPane.topAnchor="280.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="combobox" layoutX="-1.0" layoutY="473.0" prefHeight="60.0" prefWidth="163.0" AnchorPane.topAnchor="370.0" />
+            <DatePicker fx:id="datePicker" layoutX="185.0" layoutY="380.0" prefHeight="60.0" prefWidth="171.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="370.0" />
+            <Button fx:id="addEmployee" layoutX="129.0" layoutY="486.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="45.0" prefWidth="111.0" text="ADD" AnchorPane.leftAnchor="125.0" />
+            <Button fx:id="delEmployee" layoutX="131.0" layoutY="540.0" mnemonicParsing="false" onAction="#delEmployee" prefHeight="45.0" prefWidth="111.0" text="Delete" AnchorPane.leftAnchor="125.0" />
+            <Button fx:id="updEmployee" layoutX="125.0" layoutY="591.0" mnemonicParsing="false" onAction="#updEmployee" prefHeight="45.0" prefWidth="111.0" text="Update" AnchorPane.leftAnchor="125.0" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="541.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="back" fitHeight="66.0" fitWidth="66.0" layoutX="201.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-back-64.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="searchField" layoutX="330.0" layoutY="17.0" onKeyTyped="#filter" prefHeight="61.0" prefWidth="249.0" promptText="Enter Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="search" fitHeight="66.0" fitWidth="66.0" layoutX="660.0" layoutY="15.0" onMouseClicked="#filter" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-search-64.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="table" layoutX="23.0" layoutY="115.0" onMouseClicked="#fillFields" prefHeight="560.0" prefWidth="844.0">
+              <columns>
+                <TableColumn fx:id="idField" prefWidth="100.33334350585938" text="ID" />
+                <TableColumn fx:id="nameField" prefWidth="125.0" text="Name" />
+                  <TableColumn fx:id="salaryField" minWidth="0.0" prefWidth="124.0" text="Salary" />
+                  <TableColumn fx:id="joinDateField" prefWidth="163.0" text="Join-Date" />
+                  <TableColumn fx:id="rankField" prefWidth="76.0" text="Rank" />
+                  <TableColumn fx:id="cityField" prefWidth="121.0" text="City" />
+                  <TableColumn fx:id="streetField" prefWidth="137.0" text="Street" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
